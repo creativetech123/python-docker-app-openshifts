@@ -10,7 +10,7 @@ node{
     }
    
    stage("Tag & Push image"){
-      withDockerRegistry(credentialsId: 'docker-ID', url: 'https://hub.docker.com/?namespace=siddukuri') {
+      withDockerRegistry(credentialsId: 'docker-ID', url: '') {
           sh 'docker tag shiddukuri2275/creativetech123 shiddukuri2275/creativetech123:dev'
           sh 'docker push shiddukuri2275/creativetech123:dev'
           sh 'docker push shiddukuri2275/creativetech123:latest'
