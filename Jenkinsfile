@@ -6,14 +6,14 @@ node{
    }
    
    stage('Docker Build') {
-     def app = docker.build "shiddukuri2275/creativetech123"
+     def app = docker.build "shiddu/pythonapp"
     }
    
    stage("Tag & Push image"){
-      withDockerRegistry(credentialsId: 'docker-ID', url: '') {
-          sh 'docker tag shiddukuri2275/creativetech123 shiddukuri2275/creativetech123:dev'
-          sh 'docker push shiddukuri2275/creativetech123:dev'
-          sh 'docker push shiddukuri2275/creativetech123:latest'
+      withDockerRegistry(credentialsId: 'docker-ID', url: '')  {
+          sh 'docker tag shiddu/pythonapp shiddu/pythonapp:dev'
+          sh 'docker push shiddu/pythonapp:dev'
+          sh 'docker push shiddu/pythonapp:latest'
       }
     }
    
