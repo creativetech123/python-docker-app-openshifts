@@ -6,14 +6,14 @@ node{
    }
    
    stage('Docker Build') {
-     def app = docker.build "siddukuri/dockerrepo"
+     def app = docker.build "shiddukuri2275/creativetech123"
     }
    
    stage("Tag & Push image"){
       withDockerRegistry(credentialsId: 'docker-ID', url: 'https://hub.docker.com/?namespace=siddukuri') {
-          sh 'docker tag siddukuri/dockerrepo siddukuri/dockerrepo:dev'
-          sh 'docker push siddukuri/dockerrepo:dev'
-          sh 'docker push siddukuri/dockerrepo:latest'
+          sh 'docker tag shiddukuri2275/creativetech123 shiddukuri2275/creativetech123:dev'
+          sh 'docker push shiddukuri2275/creativetech123:dev'
+          sh 'docker push shiddukuri2275/creativetech123:latest'
       }
     }
    
