@@ -12,7 +12,7 @@ node{
    stage("Tag & Push image"){
       withDockerRegistry(credentialsId: 'docker-ID', url: '')  {
           sh 'docker tag pythonapp:latest shiddu/creativetech:pythonapp'
-          sh 'docker push shiddu/creativetech:pythonapp'
+          sh 'docker push dcker.io/shiddu/creativetech:pythonapp'
           //sh 'docker push shiddu/pythonapp:latest'
       }
     }
