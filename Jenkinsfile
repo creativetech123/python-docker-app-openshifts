@@ -19,8 +19,10 @@ node{
     }
    
    stage("App deployment started"){
-     sh 'oc login --token=9qE8oME7DQMDwbh75x97FZnEcis8z4SRgGJUpYm5mnY --server=https://api.us-east-1.online-starter.openshift.com:6443'
+     sh 'oc login --token=t01XSPheqChA1n1QxmPCSJAwm5rFNYzb7FvRP9mmg6A --server=https://api.us-east-1.online-starter.openshift.com:6443
+'
     // sh 'oc new-project creativetech'
+      
      sh 'oc new-app shiddu/pythonimage:dev --name python'
      sh 'oc expose svc python --name=python'
      sh 'oc status'
