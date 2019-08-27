@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt
 RUN pip install newrelic
 
 # Make port 80 available to the world outside this container
-EXPOSE 5000
+EXPOSE 50000
 
 # Define environment variable
 ENV NAME TB1
