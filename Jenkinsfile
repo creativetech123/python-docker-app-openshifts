@@ -6,14 +6,14 @@ node{
    }
    
    stage('Docker Build') {
-     def app = docker.build "pythonimage-app"
+     def app = docker.build "py-app"
     }
    
    stage("Tag & Push image"){
       withDockerRegistry(credentialsId: 'docker-ID', url: '') {
-          sh 'docker tag pythonimage-app shiddu/pythonimage-app:1.0'
+          sh 'docker tag py-app shiddu/pythonimage-app:lts'
           
-          sh 'docker push shiddu/pythonimage-app:1.0'
+          sh 'docker push shiddu/py-app:lts'
           
       }
     }
@@ -22,8 +22,8 @@ node{
      sh 'oc login --token=2JwqN3p3S0Q7ABqTXUi3HKXKNjE6YWNWVoJF9vZdK_A --server=https://api.us-east-1.online-starter.openshift.com:6443'
     // sh 'oc new-project creativetech'
       
-     sh 'oc new-app shiddu/pythonimage-app:lts --name python-app'
-     sh 'oc expose svc python-app --name=python-app'
+     sh 'oc new-app shiddu/py-app:lts --name py-app'
+     sh 'oc expose svc py-app --name=py-app'
      sh 'oc status'
     }
    
