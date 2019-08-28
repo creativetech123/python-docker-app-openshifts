@@ -22,8 +22,10 @@ node{
      sh 'oc login --token=ZoRgQA2mNzzTamRVAh3B7PNfbNtVt3mxVpgNtfiL4R0 --server=https://api.us-east-1.online-starter.openshift.com:6443'
     // sh 'oc new-project creativetech'
       
-     sh 'oc new-app shiddu/py-app:lts --name python-app --env NEW_RELIC_LICENSE_KEY=a0360aa08a234e979d6bd9f8feec22aa3684f8e4 NEW_RELIC_APP_NAME=py-app' 
+     sh 'oc new-app shiddu/py-app:lts --name python-app' 
+      //'--env NEW_RELIC_LICENSE_KEY=a0360aa08a234e979d6bd9f8feec22aa3684f8e4 NEW_RELIC_APP_NAME=py-app' 
      sh 'oc expose svc python-app --name=python-app'
+     
      sh 'oc status'
     }
    
