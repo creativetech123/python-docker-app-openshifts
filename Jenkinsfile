@@ -19,7 +19,7 @@ node{
     }
    
    stage("App deployment started"){
-     sh 'oc login --token=ZoRgQA2mNzzTamRVAh3B7PNfbNtVt3mxVpgNtfiL4R0 --server=https://api.us-east-1.online-starter.openshift.com:6443'
+     sh 'oc login --token=CQfvSffhwy7g0b2xZFdd-oV_oG_y-3Jh2o8iEx34BVo --server=https://api.us-east-1.online-starter.openshift.com:6443'
     // sh 'oc new-project creativetech'
       
      sh 'oc new-app shiddu/py-app:lts --name python-app' 
