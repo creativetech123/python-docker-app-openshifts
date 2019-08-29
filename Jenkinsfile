@@ -23,7 +23,7 @@ node{
     // sh 'oc new-project creativetech'
       
      sh 'oc new-app shiddu/py-app:lts --name python-app' 
-     sh 'oc expose svc python-app --name=python-app --env NEW_RELIC_LICENSE_KEY=a0360aa08a234e979d6bd9f8feec22aa3684f8e4 NEW_RELIC_APP_NAME=py-app'
+     sh 'oc expose svc python-app --name=python-app -e NEW_RELIC_LICENSE_KEY=a0360aa08a234e979d6bd9f8feec22aa3684f8e4 -e NEW_RELIC_APP_NAME=py-app'
      
      sh 'oc status'
     }
